@@ -18,6 +18,7 @@ class Policy(nn.Module):
         self.fc1 = nn.Linear(1, 128)
         self.fc2 = nn.Linear(128, 4)
         self.optimizer = optim.Adam(self.parameters(), lr=learning_rate)
+        # https://sanghyu.tistory.com/113 (learning rate scheduler 소개)
         # self.scheduler = optim.lr_scheduler.LambdaLR(optimizer=self.optimizer,
         #                                 lr_lambda=lambda epoch: 0.95 ** epoch,
         #                                 last_epoch=-1,
